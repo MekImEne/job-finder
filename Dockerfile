@@ -1,10 +1,25 @@
 # Dockerfile
+ARG NODEJS_IMAGE
 
 # Use an official Node.js runtime as a parent image
-FROM node:18
+FROM ${NODEJS_IMAGE}
 
 # Set the working directory to /app
 WORKDIR /app
+
+# Install required dependencies
+#RUN apt-get update && \
+#    apt-get install -y wget gnupg
+
+# Install AdoptOpenJDK 8
+#RUN wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | apt-key add - && \
+#    echo "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ buster main" > /etc/apt/sources.list.d/adoptopenjdk.list && \
+#    apt-get update && \
+#    apt-get install -y adoptopenjdk-8-hotspot
+
+# Set the JAVA_HOME environment variable
+#ENV JAVA_HOME /usr/lib/jvm/adoptopenjdk-8-hotspot-amd64
+#ENV PATH $PATH:$JAVA_HOME/bin
 
 # Copy the package.json and yarn.lock files to the working directory
 COPY package.json yarn.lock ./
@@ -23,4 +38,5 @@ RUN npx react-native bundle --platform android --dev false --entry-file index.js
 EXPOSE 8080
 
 # Start the app
-CMD ["yarn", "start"]
+ENTRYPOINT [ "yarn", "start" ]
+CMD ["android"]
