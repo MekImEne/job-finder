@@ -55,6 +55,12 @@ docker build -t job-finder  .
 # rename container
 docker run --name job-finder -p 8080:80 job-finder
 
+# open terminal
+docker-compose exec job_finder /bin/sh 
+
+# run in Android
+yarn android
+
 ```
 
 
