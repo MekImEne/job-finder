@@ -1,3 +1,6 @@
+/* eslint-disable no-catch-shadow */
+/* eslint-disable @typescript-eslint/no-shadow */
+/* eslint-disable react-hooks/exhaustive-deps */
 import {API_URL, RAPID_API_HOST} from '@env';
 import {Item} from '@src/components/common/cards/popular';
 import axios from 'axios';
@@ -35,7 +38,6 @@ const useFetch = (endpoint: string, query: any) => {
 
   useEffect(() => {
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const refetch = () => {
