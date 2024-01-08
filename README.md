@@ -43,4 +43,20 @@ yarn ios
 ```
 
 
+## Step 3: Dockerize Application
+
+
+```bash
+# create Dockerfile
+
+# build image
+docker build -t job-finder  .
+
+# rename container
+docker run --name job-finder -p 8080:80 job-finder
+
+```
+
+
+
 
