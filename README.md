@@ -1,3 +1,27 @@
+# JobFinder
+This is a simple mobile application for job searching
+
+## Features
+
+Alongside building this application, I learned how to:
+- develop visually appealing UI/UX designs
+- fetch data from an external API and integrate it
+- implement search & pagination functionality
+- create custom API data fetching hooks
+- write clean, organized, and maintainable code with proper architecture
+- follow the best practices for React Native development
+- Configure environment variables
+- Dockerize react native app
+
+## Built With
+
+- React Native CLI
+- Typescript
+- RapidAPI
+- Axios for fetching
+- Docker
+
+### Start Application
 
 ```bash
 # using npm
@@ -5,13 +29,9 @@ npm start
 
 # OR using Yarn
 yarn start
-```
+``` 
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+#### For Android
 
 ```bash
 # using npm
@@ -21,7 +41,7 @@ npm run android
 yarn android
 ```
 
-### For iOS
+#### For iOS
 
 ```bash
 # using npm
@@ -53,5 +73,7 @@ yarn android
 ```
 
 
+### Authors and acknowledgment
 
+[MEKIDECHE Imane](https://github.com/MekImEne)
 
