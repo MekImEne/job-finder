@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import {API_URL, RAPID_API_HOST} from '@env';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {NearbyJobCard} from '@src/components';
@@ -42,11 +43,10 @@ const Search = ({route}: SearchProps) => {
     try {
       const options = {
         method: 'GET',
-        url: `https://jsearch.p.rapidapi.com/search`,
+        url: `${API_URL}/search`,
         headers: {
-          'X-RapidAPI-Key': '',
-          //'8330112d6cmsh168eac712cb8339p12e5ebjsn7e1552dc02ba',
-          'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+          'X-RapidAPI-Key': '', //`${RAPID_API_KEY}`,
+          'X-RapidAPI-Host': RAPID_API_HOST,
         },
         params: {
           query: id,

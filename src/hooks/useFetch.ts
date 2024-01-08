@@ -1,3 +1,4 @@
+import {API_URL, RAPID_API_HOST} from '@env';
 import {Item} from '@src/components/common/cards/popular';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
@@ -9,10 +10,10 @@ const useFetch = (endpoint: string, query: any) => {
 
   const options = {
     method: 'GET',
-    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
+    url: `${API_URL}/${endpoint}`,
     headers: {
-      'X-RapidAPI-Key': '', //'8330112d6cmsh168eac712cb8339p12e5ebjsn7e1552dc02ba',
-      'X-RapidAPI-Host': 'jsearch.p.rapidapi.com',
+      'X-RapidAPI-Key': '', //`${RAPID_API_KEY}`,
+      'X-RapidAPI-Host': RAPID_API_HOST,
     },
     params: {...query},
   };
